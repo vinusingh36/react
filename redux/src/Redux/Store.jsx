@@ -1,10 +1,11 @@
-import { legacy_createStore as createStore } from "redux";
+import { combineReducers, legacy_createStore as createStore } from "redux";
 import { todoReducer } from "./todoReducer";
+import jsonTodoReducer from "./JsonTodo/JsonTodoReducer";
 
-let myStore = createStore(todoReducer);
 
-myStore.subscribe(() => {
-    console.log(myStore.getState());
-})
+const rootReducer = combineReducers({ todoReducer, jsonTodoReducer })
 
-export default myStore;
+let Store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+
+export default Store;

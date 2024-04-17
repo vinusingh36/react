@@ -1,5 +1,5 @@
 
-import { INC, DEC, RESET, TODO } from "../Redux/actionTypes"
+import { INC, DEC, RESET, TODO, TOGGLE } from "../Redux/actionTypes"
 
 
 
@@ -28,3 +28,4 @@ export const handleData = (data) => {
         payload: data
     })
 }
+
